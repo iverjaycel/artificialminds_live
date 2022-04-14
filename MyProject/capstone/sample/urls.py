@@ -1,4 +1,7 @@
 from django.urls import path
+from django.views.static import serve
+from django.conf.urls import url
+
 from . import views
 
 app_name= 'sample'
@@ -20,6 +23,7 @@ urlpatterns = [
 	path('setappointment', views.SetAppointmentView.as_view(), name="setappointment"),
 	path('viewappointment', views.ViewAppointmentView.as_view(), name="viewappointment"),
 	path('lobby/', views.lobby),
+	path('alobby/', views.alobby),
 	path('videoroom/', views.videoroom),
 	path('get_token/', views.getToken),
 	path('create_member/', views.createMember),
@@ -31,6 +35,10 @@ urlpatterns = [
     path('send', views.send, name='send'),
     path('getMessages/<str:room>/', views.getMessages, name='getMessages'),
     path('ratings', views.ratings, name="ratings"),
-
+    path('end', views.end, name="end"),
+	url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 ]
+
+
 
