@@ -1,6 +1,4 @@
 from django.urls import path
-from django.views.static import serve
-from django.conf.urls import url
 
 from . import views
 
@@ -36,8 +34,6 @@ urlpatterns = [
     path('getMessages/<str:room>/', views.getMessages, name='getMessages'),
     path('ratings', views.ratings, name="ratings"),
     path('end', views.end, name="end"),
-	url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 ]
 
 
