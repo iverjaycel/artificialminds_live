@@ -1,1 +1,1 @@
-web: gunicorn MyProject:app
+web: gunicorn MyProject:capstone
