@@ -1,1 +1,1 @@
-web: gunicorn capstone.settings.wsgi --log-file -
+PYTHONPATH=`pwd`/.. gunicorn --bind 0.0.0.0:4500 capstone.wsgi:application
