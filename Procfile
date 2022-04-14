@@ -1,1 +1,1 @@
-web: gunicorn MyProject:capstone
+web: gunicorn CCMS.wsgi --log-file -
